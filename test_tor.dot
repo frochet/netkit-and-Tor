@@ -1,0 +1,16 @@
+graph g{
+	
+	torclient1 -- router1 [zone=A][prefix="122.42.1"]
+	torclient2 -- router1 [zone=A][prefix="122.42.1"]
+	torclient3 -- router1 [zone=A][prefix="122.42.1"]
+	router1 -- relay1 [zone=C][prefix="122.42.3"]
+	router1 -- relay2 [zone=C][prefix="122.42.3"]
+	router1 -- directorytorserv [zone=B][prefix="122.42.2"]
+	router1 -- router2 [zone=D][prefix="122.43.4"]
+	router2 -- relay3 [zone=E][prefix="122.43.5"]
+	router2 -- relay4 [zone=E][prefix="122.43.5"]
+	router2 -- router3 [zone=F][prefix="110.40.1"]
+	router3 -- relay5 [zone=G][prefix="110.40.2"]
+	router3 -- relay6 [zone=G][prefix="110.40.2"]
+
+}
