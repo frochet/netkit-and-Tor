@@ -1,0 +1,55 @@
+You need the following packet
+
+bison
+flex
+automake => automake-1.13 is bugged (jan 2014). Dowload version 1.11
+debootstrap
+libvdeplug-dev
+libpcap-dev
+
+-------------------------------
+installation :
+
+go in netkit-core/
+
+autoreconf --install
+./configure
+make
+sudo make install
+
+
+then in netkit-uml-kernel
+
+autorecof --install
+./configure
+make
+sudo make install
+
+then in netkit-uml-filesyste
+
+autoreconf --install
+./configure
+make
+sudo make install
+
+
+If you have errors during compilation, you probably not have a .h. Try to see during the compilation which .h is missing and install the dev packet to get it.
+
+Now you should have the following directory
+
+/usr/local/share/netkitcore
+/usr/local/share/netkituml
+/usr/local/share/netkitumlk
+
+in /usr/local/share/netkitcore/netkit.conf change the path to the filesystem and the path to the kernel. 
+
+VM_MODEL_FS="/usr/local/share/netkitcore/fs/netkit-fs"        # Model filesystem for all virtual machines
+VM_KERNEL="/usr/local/share/netkitcore/kernel/netkit-kernel"  # Virtual machine kernel
+
+To :
+
+VM_MODEL_FS="/usr/local/share/netkituml/default-fs"        # Model filesystem for all virtual machines
+VM_KERNEL="/usr/local/share/netkitumlk/mptcp-ker"  # Virtual machine kernel
+
+
+
