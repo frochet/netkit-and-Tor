@@ -51,5 +51,7 @@ To :
 VM_MODEL_FS="/usr/local/share/netkituml/default-fs"        # Model filesystem for all virtual machines
 VM_KERNEL="/usr/local/share/netkitumlk/mptcp-ker"  # Virtual machine kernel
 
+Then follow the instruction in the README of lab_creation_script to create a
+lab. Once lab created, do lstart -f in the lab directory.
 
 
